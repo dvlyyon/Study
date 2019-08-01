@@ -87,6 +87,12 @@ public class InterleaveSshTransportClient implements TransportClientIf, HelloRes
 		return mConnected;
 	}
 
+	public boolean isAsyn() {
+		String mode = this.mProperties.getProperty("communicationMode","sync");
+		if (mode.equals("async")) return true;
+		return false;
+	}
+	
 	/**
 	 * Create the Synchronous SSH connection (or just connect it if alread created), and establish sessions
 	 */
@@ -266,8 +272,33 @@ public class InterleaveSshTransportClient implements TransportClientIf, HelloRes
 		return null;
 	}
 
+	private Element sendInAsynchronousMode(Element data, String xid) throws RuntimeException {
+		try {
+			obtainConnection(xid);
+			s_logger.debug("to send request in asynchronous mode...");
+		} catch (Exception ex) {
+			mBusy = false;
+			destroyConnection();
+			throw ex;
+		}
+		try {
+			mConnection.send(data, null);
+		} catch (Exception ex) {
+			mBusy = false;
+			destroyConnection();
+			throw ex;
+		}
+		String messageId = data.getAttributeValue("message-id");
+		Element response = new Element("messageId");
+		response.setText(messageId);
+		return response;
+	}
+	
 	@Override
 	public Element send(Element data, String xid) throws RuntimeException {
+		if (isAsyn()) {
+			return sendInAsynchronousMode(data, xid);
+		}
 		boolean destroy = false;
 		// Make sure the session is available and grab it
 		acquireSession();

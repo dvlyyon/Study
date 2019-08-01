@@ -131,11 +131,12 @@ public class InterleaveSshConnection extends SshConnection {
 //			throw new RuntimeException("A synchronous call is already in progress");
 //		}
 //		mCallInProgress = true;
-
-		boolean available = mCallbackQueue.offer(callback);
-		if (!available) {
-			throw new RuntimeException("There are too much concurrent RPCs ( " + MAX_CONCURRENT_RPC_NUM + ")");
-		}
+		if (callback != null) { //synchronous mode
+			boolean available = mCallbackQueue.offer(callback);
+			if (!available) {
+				throw new RuntimeException("There are too much concurrent RPCs ( " + MAX_CONCURRENT_RPC_NUM + ")");
+			}
+		};
 		try
 		{
 			syncSend(data, false, traceWireData);
@@ -199,7 +200,7 @@ public class InterleaveSshConnection extends SshConnection {
 //				}
 				ResponseCallbackIf caller = mCallbackQueue.poll();
 				if (caller == null) {
-					s_logger.error("We receive a RPC response and no request to it:\n" + response);
+					s_logger.error("We receive a RPC response and no request to it or it is async RPC:\n" + response);
 					Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 					this.mNotificationListener.notify(currentTime, response);
 				} else {

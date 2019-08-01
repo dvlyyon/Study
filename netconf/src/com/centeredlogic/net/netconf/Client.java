@@ -130,6 +130,7 @@ public class Client implements TransactionalResourceIf, ConfiguratorIf, HelloRes
    public void setup(final Properties props, NotificationListenerIf listener, boolean connect) throws RuntimeException
    {
       String protocol = props.getProperty("protocol", "ssh");
+      String communicationMode = props.getProperty("communicationMode", "sync");
       if (protocol.equals("ssh"))
       {
          m_transport = new SshTransportClient();
@@ -151,7 +152,7 @@ public class Client implements TransactionalResourceIf, ConfiguratorIf, HelloRes
       else
     	  m_transport.setup(props, this, listener);
 
-      if (connect)
+      if (connect && communicationMode.equals("sync"))
          connect();
    }
   
