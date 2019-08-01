@@ -221,7 +221,7 @@ public class InterleaveSshConnection extends SshConnection {
 			}
 			else if (responseType.equals("notification"))
 			{
-				Element root = null;
+//				Element root = null;
 				if (s_logger.isDebugEnabled())
 				{
 					s_logger.debug("Top-level notification XML: " + XmlUtils.toXmlString(response));
@@ -229,7 +229,7 @@ public class InterleaveSshConnection extends SshConnection {
 				// Notifications (call the listener)
 				s_logger.debug("Got a notification from device: " + responseType);
 				Timestamp eventTime = null;
-				ArrayList<Element> dataNodes = new ArrayList<Element>();
+//				ArrayList<Element> dataNodes = new ArrayList<Element>();
 				List<Element> kids = (List<Element>) response.getChildren();
 				for (Element kid : kids)
 				{
@@ -238,6 +238,7 @@ public class InterleaveSshConnection extends SshConnection {
 						try
 						{
 							eventTime = new RFC3399Timestamp(kid.getText()).getSqlTimestamp();
+							break;
 						}
 						catch (final Exception ex)
 						{
@@ -245,28 +246,31 @@ public class InterleaveSshConnection extends SshConnection {
 							eventTime = new Timestamp(System.currentTimeMillis());
 						}
 					}
-					else
-					{
-						dataNodes.add(kid);
-					}
+//					else
+//					{
+//						dataNodes.add(kid);
+//					}
 				}
-				if (dataNodes.size() > 0)
-				{
-					root = new Element("data");
-					for (Element dataNode : dataNodes)
-					{
-						dataNode.detach();
-						root.addContent(dataNode);
-					}
-					if (s_logger.isDebugEnabled())
-						s_logger.debug("Notification data: " + XmlUtils.toXmlString(root));
-				}
+//				if (dataNodes.size() > 0)
+//				{
+//					root = new Element("data");
+//					for (Element dataNode : dataNodes)
+//					{
+//						dataNode.detach();
+//						root.addContent(dataNode);
+//					}
+//					if (s_logger.isDebugEnabled())
+//						s_logger.debug("Notification data: " + XmlUtils.toXmlString(root));
+//				}
 				mLastReceivedNotificationTime = eventTime;
-				mNotificationListener.notify(eventTime, root);
+//				mNotificationListener.notify(eventTime, root);
+				mNotificationListener.notify(eventTime, response);
 			}
 			else
 			{
 				s_logger.warn("Unexpected XML message received from device: " + responseType);
+				Timestamp currentTime = new Timestamp(System.currentTimeMillis());
+				this.mNotificationListener.notify(currentTime, response);
 			}
 		}
 		catch (final Exception fex)
