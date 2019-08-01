@@ -1,0 +1,22 @@
+       NetconfX Licensing
+       ==================
+
+NetconfX is distributed under two separate licensing models:
+
+1. The GNU GPL, which allows you to use NetconfX in any software you develop,
+   but restricts you from redistributing NetconfX or any derived work freely.
+   Specifically, if your program requires NetconfX (or a derived work) to run,
+   then it also must be distributed under the GNU GPL license.
+
+   For more details about the GNU GPL license, see:
+     http://www.gnu.org/licenses/gpl-2.0.html
+
+2. A commercial license, which allows you to use NetconfX in your software and
+   redistribute its binaries freely, without any restrictions in terms of what
+   licensing model your program follows.
+
+   To obtain the commercial license, or for additional details, please contact:
+     info@centeredlogic.com
+
+
+[Document updated June 6, 2011]

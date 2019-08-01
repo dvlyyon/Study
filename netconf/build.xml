@@ -1,0 +1,211 @@
+<project name="netconfX" default="all" basedir=".">
+
+   <property environment="env"/>
+   <property file="build.properties" />
+
+   <!-- In case build.home has not been set by the environment, set it based on elements-environement "out" -->
+   <property name="build.home" value="${env.ELEMENTS_BUILD}/netconfX" />
+
+   <property name="src.home" value="." />
+
+   <target name="show.env">
+	   <echo message="src.home=${src.home}" />
+	   <echo message="build.home=${build.home}" />
+   </target>	
+
+   <property name="debugFlag" value="${debug}" />
+
+   <property name="java.home" value="${env.JAVA_HOME}" />
+
+   <!-- Source location settings -->
+
+   <property name="src.dir" value="${src.home}/src" />
+   <property name="libs.dir" value="${src.home}/libs" />
+   <property name="test.dir" value="${src.home}/test" />
+
+   <!-- Temporary build settings -->
+
+   <property name="build.dir" value="${build.home}/build" />
+   <property name="junit.reports.dir" value="${build.home}/junit"/>
+   <property name="build.dir.classes" value="${build.dir}/classes"/>
+   <property name="build.dir.testClasses" value="${build.dir}/testClasses"/>
+
+   <!-- Distribution settings -->
+   <property name="lib.dir" value="${build.home}/lib"/>
+   <property name="dist.dir" value="${build.home}/dist"/>
+   <property name="docs.dir" value="${build.home}/docs"/>
+   <property name="dir.javadoc" value="${build.home}/docs/api"/>
+
+   <!-- Class paths -->
+   <path id="build.class.path">
+      <!-- Add the (3rdParty) Jars we need to the classpath -->
+      <fileset dir="${libs.dir}">
+         <include name="*.jar" />
+      </fileset>
+   </path>
+
+   <path id="build.tests.class.path">
+      <fileset dir="${libs.dir}">
+         <include name="*.jar" />
+      </fileset>
+      <pathelement path="${build.dir.classes}"/>
+   </path>
+
+   <path id="run.tests.class.path">
+      <fileset dir="${libs.dir}">
+         <include name="*.jar" />
+      </fileset>
+      <pathelement path="${build.dir.classes}"/>
+      <pathelement path="${build.dir.testClasses}"/>
+   </path>
+
+   <!-- Prep for build -->
+
+   <target name="clean">
+      <delete dir="${build.home}" />
+   </target>
+
+   <target name="prepare">
+     <mkdir dir="${build.home}"/>
+     <mkdir dir="${build.dir}"/>
+     <mkdir dir="${build.dir}/classes"/>
+     <mkdir dir="${build.dir}/testClasses"/>
+     <mkdir dir="${junit.reports.dir}"/>
+     <mkdir dir="${dist.dir}"/>
+     <mkdir dir="${docs.dir}"/>
+     <mkdir dir="${lib.dir}"/>
+     <copy todir="${lib.dir}" overwrite="yes" verbose="yes">
+        <fileset dir="${libs.dir}">
+           <include name="*.jar"/>
+        </fileset>
+     </copy>
+   </target>
+
+   <!-- Builds the sources -->
+
+   <target name="sources.build">
+      <echo message="Building all sources"/>
+      <javac debug="${debugFlag}" destdir="${build.dir.classes}">
+         <src path="${src.dir}"/> 
+         <classpath refid="build.class.path" />
+      </javac>
+   </target>
+
+   <target name="create.jar" depends="sources.build" description="Build the cl-netconfX JAR file">
+      <jar basedir="${build.dir.classes}" destfile="${dist.dir}/netconfX-${netconfx.version}.jar" />
+   </target>
+
+   <!-- Builds the unit tests -->
+
+   <target name="tests.build">
+      <echo message="Building all unit-tests"/>
+      <javac debug="${debugFlag}" destdir="${build.dir.testClasses}">
+         <src path="test"/>
+         <classpath refid="build.tests.class.path" />
+      </javac>
+   </target>
+
+   <target name="create.tests.jar" depends="tests.build" description="Build the netconfX test JAR file">
+      <jar basedir="${build.dir.testClasses}" destfile="${dist.dir}/netconfX_test-${netconfx.version}.jar" />
+   </target>
+
+   <!-- Runs all the unit tests -->
+
+   <target name="tests.run" depends="tests.build">
+      <echo message="Running core unit-tests"/>
+      <junit printsummary="on" haltonfailure="yes" showoutput="yes" >
+        <classpath  refid="run.tests.class.path" />
+        <batchtest fork="yes" todir="${junit.reports.dir}">
+          <formatter type="plain"/>
+            <fileset dir="test">
+              <include name="**/*Test.java"/>
+            </fileset>
+        </batchtest>
+      </junit>
+   </target>
+
+    <!-- Zips up everything and build the SDK -->
+
+    <target name="src_dist" description="Zips up everything to create the SDK for this project">
+        <zip destfile="${build.home}/netconfX-${netconfx.version}-src.zip">
+            <fileset dir=".">
+                <include name="docs/*.pdf" />
+                <include name="libs/**" />
+                <include name="src/**" />
+                <include name="test/**" />
+                <include name="samples/**" />
+                <include name="*" />
+            </fileset>
+        </zip>
+    </target>
+
+   <!-- Generate Javadocs -->
+   <target name="docs.generate">
+
+   <javadoc destdir="${docs.dir}/api"
+           author="true"
+           version="true"
+           use="true"
+           private="true"
+           windowtitle="CenteredLogic netconfX API Documentation" useexternalfile="true"
+           includenosourcepackages="true">
+
+      <classpath>
+        <path refid="build.class.path" />
+      </classpath>
+
+      <fileset dir="${src.dir}">
+        <include name="**/*.java"/>
+      </fileset>
+
+      <!-- fileset dir="${test.dir}">
+        <include name="**/*.java"/>
+      </fileset -->
+
+      <doctitle><![CDATA[<h1>CenteredLogic netconfX API</h1>]]></doctitle>
+      <bottom><![CDATA[<i>Copyright &#169; 2010 - 2011 Model Based Management Technologies, LLC. All Rights Reserved.</i>]]></bottom>
+
+      <!-- Link to packages we depend on -->
+      <!-- link href="${centeredlogic-commons.docs}/api/" resolveLink="true" / -->
+      <!--link href="http://java.sun.com/javase/6/docs/api/" /-->
+    </javadoc>
+
+   </target>
+
+   <target name="docs.copy">
+      <copy todir="${docs.dir}" overwrite="true" verbose="yes">
+        <fileset dir="docs">
+           <include name="**/*.pdf" />
+        </fileset>
+      </copy>
+   </target>
+
+    <target name="bin_dist" depends="cleanbuild, docs" description="Creates distributable archive.">
+        <zip destfile="${build.home}/netconfX-${netconfx.version}.zip">
+            <fileset dir="${build.home}" >
+              <include name="dist/**" />
+              <include name="docs/**" />
+              <include name="lib/**" />
+              <include name="samples/**" />
+            </fileset>
+            <fileset dir="${src.home}" >
+              <include name="*.html" />
+              <include name="README" />
+              <include name="LICENSE" />
+            </fileset>
+        </zip>
+    </target>
+
+   <!-- Commonly-used build targets -->
+
+   <target name="all" depends="create.jar, create.tests.jar, tests.run"/>
+   
+   <target name="quick" depends="sources.build"/>
+
+   <target name="cleanbuild" depends="clean, prepare, all" />
+
+   <target name="docs" depends="docs.generate, docs.copy" />
+  
+
+</project>
+

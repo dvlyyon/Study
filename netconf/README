@@ -1,0 +1,43 @@
+
+       Instructions on using NetconfX
+       ==============================
+
+0. It is assumed that the system already has the following:
+   - The Java SE SDK. NetconfX has been tested with
+     JDK version 1.6, but lower versions might work.
+   - Apache ANT. NetconfX has been tested with Ant 1.8, but
+     lower versions should work, too.
+
+1. Download the NetconfX sources and unzip them into some source folder - e.g.
+       /NetconfX        (*nix)
+       C:\Temp\NetconfX (Windows)
+
+2. Set the environment variable that defines where the build artifacts
+   end up like so:
+     export NETCONFX_BUILD=/NetconfX-build         (*nix)
+     set NETCONFX_BUILD=C:\Temp\netconfx-build     (Windows)
+
+3. Build the sources to create the distribution. The command for this is
+     ant dist                   OR
+     ant -Ddebug=true dist     (if you want to debug the resultant code)
+
+
+  You will get a ZIP file in the ${NETCONF_BUILD} folder that contains:
+     |
+     -- lib
+     |   |
+     |   -- NetconfX.jar (JAR file containing NetconfX classes)
+     |   |
+     |   -- NetconfX_test.jar (JAR file containing NetconfX test classes)
+     |
+     -- docs
+         |
+         -- *.pdf (Developer docs)
+         |
+         -- api
+             |
+             -- *.html (API Javadocs)
+
+
+  You can then add "NetconfX.jar" to you application's classpath.
+     

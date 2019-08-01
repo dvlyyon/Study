@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netconfDataModel>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch" xmlPath="" xmlTag="capable-switch" xmlNamespace="urn:onf:of11:config:yang" type="Normal" keys="">
+    <attribute name="id" xmlTag="id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_configurationPoints" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;" xmlTag="configuration-points" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch" keys="" />
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_configurationPoints_configurationPoint" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#configuration-points&gt;" xmlTag="configuration-point" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_configurationPoints" keys="id">
+    <attribute name="id" xmlTag="id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="uri" xmlTag="uri" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="protocol" xmlTag="protocol" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;" xmlTag="resources" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch" keys="" />
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;" xmlTag="port" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources" keys="resourceId">
+    <attribute name="resourceId" xmlTag="resource-id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="number" xmlTag="number" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 18446744073709551615</value>
+      </restriction>
+    </attribute>
+    <attribute name="name" xmlTag="name" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="false" many="false" synthetic="false">
+      <restriction type="Length">
+        <value>1 16</value>
+      </restriction>
+    </attribute>
+    <attribute name="currentRate" xmlTag="current-rate" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 4294967295</value>
+      </restriction>
+    </attribute>
+    <attribute name="maxRate" xmlTag="max-rate" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 4294967295</value>
+      </restriction>
+    </attribute>
+    <attribute name="tunnelType" xmlTag="tunnel-type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;" xmlTag="tunnel-type" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port" keys="">
+    <attribute name="tunnel" xmlTag="tunnel" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="ipgreTunnel" xmlTag="ipgre-tunnel" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="vxlanTunnel" xmlTag="vxlan-tunnel" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="nvgreTunnel" xmlTag="nvgre-tunnel" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;" xmlTag="tunnel" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType" keys="">
+    <attribute name="tunnel" xmlTag="tunnel" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;" xmlTag="tunnel" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel" keys="">
+    <attribute name="localEndpointAddress" xmlTag="local-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointAddress" xmlTag="remote-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_localEndpointAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;" xmlTag="local-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel" keys="">
+    <attribute name="localEndpointIpv4Adress" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="localEndpointIpv6Adress" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="localEndpointMacAdress" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_localEndpointAddress_localEndpointIpv4Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointIpv4Adress" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_localEndpointAddress_localEndpointIpv6Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointIpv6Adress" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_localEndpointAddress_localEndpointMacAdress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointMacAdress" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_remoteEndpointAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;" xmlTag="remote-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel" keys="">
+    <attribute name="remoteEndpointIpv4Adress" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointIpv6Adress" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointMacAdress" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_remoteEndpointAddress_remoteEndpointIpv4Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointIpv4Adress" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_remoteEndpointAddress_remoteEndpointIpv6Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointIpv6Adress" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_remoteEndpointAddress_remoteEndpointMacAdress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_tunnel_tunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointMacAdress" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;" xmlTag="ipgre-tunnel" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType" keys="">
+    <attribute name="ipgreTunnel" xmlTag="ipgre-tunnel" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;" xmlTag="ipgre-tunnel" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel" keys="">
+    <attribute name="localEndpointAddress" xmlTag="local-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointAddress" xmlTag="remote-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="checksumPresent" xmlTag="checksum-present" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="keyPresent" xmlTag="key-present" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="key" xmlTag="key" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 4294967295</value>
+      </restriction>
+    </attribute>
+    <attribute name="sequenceNumberPresent" xmlTag="sequence-number-present" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_localEndpointAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;" xmlTag="local-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel" keys="">
+    <attribute name="localEndpointIpv4Adress" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="localEndpointIpv6Adress" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="localEndpointMacAdress" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_localEndpointAddress_localEndpointIpv4Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointIpv4Adress" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_localEndpointAddress_localEndpointIpv6Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointIpv6Adress" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_localEndpointAddress_localEndpointMacAdress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointMacAdress" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_remoteEndpointAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;" xmlTag="remote-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel" keys="">
+    <attribute name="remoteEndpointIpv4Adress" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointIpv6Adress" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointMacAdress" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_remoteEndpointAddress_remoteEndpointIpv4Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointIpv4Adress" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_remoteEndpointAddress_remoteEndpointIpv6Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointIpv6Adress" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_remoteEndpointAddress_remoteEndpointMacAdress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#ipgre-tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_ipgreTunnel_ipgreTunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointMacAdress" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;" xmlTag="vxlan-tunnel" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType" keys="">
+    <attribute name="vxlanTunnel" xmlTag="vxlan-tunnel" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;" xmlTag="vxlan-tunnel" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel" keys="">
+    <attribute name="localEndpointAddress" xmlTag="local-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointAddress" xmlTag="remote-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="vniValid" xmlTag="vni-valid" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="vni" xmlTag="vni" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 4294967295</value>
+      </restriction>
+    </attribute>
+    <attribute name="vniMulticastGroup" xmlTag="vni-multicast-group" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="udpSourcePort" xmlTag="udp-source-port" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 65535</value>
+      </restriction>
+    </attribute>
+    <attribute name="udpDestPort" xmlTag="udp-dest-port" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 65535</value>
+      </restriction>
+    </attribute>
+    <attribute name="udpChecksum" xmlTag="udp-checksum" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_localEndpointAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;" xmlTag="local-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel" keys="">
+    <attribute name="localEndpointIpv4Adress" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="localEndpointIpv6Adress" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="localEndpointMacAdress" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_localEndpointAddress_localEndpointIpv4Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointIpv4Adress" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_localEndpointAddress_localEndpointIpv6Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointIpv6Adress" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_localEndpointAddress_localEndpointMacAdress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointMacAdress" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_remoteEndpointAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;" xmlTag="remote-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel" keys="">
+    <attribute name="remoteEndpointIpv4Adress" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointIpv6Adress" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointMacAdress" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_remoteEndpointAddress_remoteEndpointIpv4Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointIpv4Adress" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_remoteEndpointAddress_remoteEndpointIpv6Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointIpv6Adress" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_remoteEndpointAddress_remoteEndpointMacAdress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointMacAdress" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel_vniMulticastGroup" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;&lt;urn:onf:of11:config:yang#vxlan-tunnel&gt;" xmlTag="vni-multicast-group" xmlNamespace="urn:onf:of11:config:yang" type="Union" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_vxlanTunnel_vxlanTunnel" keys="">
+    <attribute name="ipv4Address" readOnly="false" mandatory="false" many="false" synthetic="true">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+    <attribute name="ipv6Address" readOnly="false" mandatory="false" many="false" synthetic="true">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;" xmlTag="nvgre-tunnel" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType" keys="">
+    <attribute name="nvgreTunnel" xmlTag="nvgre-tunnel" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;" xmlTag="nvgre-tunnel" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel" keys="">
+    <attribute name="localEndpointAddress" xmlTag="local-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointAddress" xmlTag="remote-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="tni" xmlTag="tni" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 4294967295</value>
+      </restriction>
+    </attribute>
+    <attribute name="tniUser" xmlTag="tni-user" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 4294967295</value>
+      </restriction>
+    </attribute>
+    <attribute name="tniMulticastGroup" xmlTag="tni-multicast-group" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_localEndpointAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;" xmlTag="local-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel" keys="">
+    <attribute name="localEndpointIpv4Adress" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="localEndpointIpv6Adress" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="localEndpointMacAdress" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_localEndpointAddress_localEndpointIpv4Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointIpv4Adress" xmlTag="local-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_localEndpointAddress_localEndpointIpv6Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointIpv6Adress" xmlTag="local-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_localEndpointAddress_localEndpointMacAdress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#local-endpoint-address&gt;" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_localEndpointAddress" keys="">
+    <attribute name="localEndpointMacAdress" xmlTag="local-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_remoteEndpointAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;" xmlTag="remote-endpoint-address" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel" keys="">
+    <attribute name="remoteEndpointIpv4Adress" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointIpv6Adress" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="remoteEndpointMacAdress" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_remoteEndpointAddress_remoteEndpointIpv4Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointIpv4Adress" xmlTag="remote-endpoint-ipv4-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_remoteEndpointAddress_remoteEndpointIpv6Adress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointIpv6Adress" xmlTag="remote-endpoint-ipv6-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_remoteEndpointAddress_remoteEndpointMacAdress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#remote-endpoint-address&gt;" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_remoteEndpointAddress" keys="">
+    <attribute name="remoteEndpointMacAdress" xmlTag="remote-endpoint-mac-adress" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5}</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel_tniMulticastGroup" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#tunnel-type&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;&lt;urn:onf:of11:config:yang#nvgre-tunnel&gt;" xmlTag="tni-multicast-group" xmlNamespace="urn:onf:of11:config:yang" type="Union" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_tunnelType_nvgreTunnel_nvgreTunnel" keys="">
+    <attribute name="ipv4Address" readOnly="false" mandatory="false" many="false" synthetic="true">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+    <attribute name="ipv6Address" readOnly="false" mandatory="false" many="false" synthetic="true">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_configuration" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;" xmlTag="configuration" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port" keys="">
+    <attribute name="adminState" xmlTag="admin-state" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="noReceive" xmlTag="no-receive" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="noForward" xmlTag="no-forward" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="noPacketIn" xmlTag="no-packet-in" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.status.CapableSwitch_resources_port_state" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;" xmlTag="state" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port" keys="">
+    <attribute name="operState" xmlTag="oper-state" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false" />
+    <attribute name="blocked" xmlTag="blocked" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false" />
+    <attribute name="live" xmlTag="live" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_features" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;" xmlTag="features" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port" keys="" />
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.status.CapableSwitch_resources_port_features_current" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#features&gt;" xmlTag="current" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_features" keys="">
+    <attribute name="rate" xmlTag="rate" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false" />
+    <attribute name="autoNegotiate" xmlTag="auto-negotiate" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false" />
+    <attribute name="medium" xmlTag="medium" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false" />
+    <attribute name="pause" xmlTag="pause" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_features_advertised" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#features&gt;" xmlTag="advertised" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_features" keys="">
+    <attribute name="autoNegotiate" xmlTag="auto-negotiate" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="pause" xmlTag="pause" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="rate" xmlTag="rate" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+    <attribute name="medium" xmlTag="medium" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.status.CapableSwitch_resources_port_features_supported" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#features&gt;" xmlTag="supported" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_features" keys="">
+    <attribute name="autoNegotiate" xmlTag="auto-negotiate" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false" />
+    <attribute name="pause" xmlTag="pause" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="false" many="false" synthetic="false" />
+    <attribute name="rate" xmlTag="rate" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="false" many="true" synthetic="false" />
+    <attribute name="medium" xmlTag="medium" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.status.CapableSwitch_resources_port_features_advertisedPeer" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#port&gt;&lt;urn:onf:of11:config:yang#features&gt;" xmlTag="advertised-peer" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_port_features" keys="">
+    <attribute name="autoNegotiate" xmlTag="auto-negotiate" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="true" many="false" synthetic="false" />
+    <attribute name="pause" xmlTag="pause" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="false" many="false" synthetic="false" />
+    <attribute name="rate" xmlTag="rate" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="false" many="true" synthetic="false" />
+    <attribute name="medium" xmlTag="medium" xmlNamespace="urn:onf:of11:config:yang" readOnly="true" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_queue" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;" xmlTag="queue" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources" keys="resourceId">
+    <attribute name="resourceId" xmlTag="resource-id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="id" xmlTag="id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 18446744073709551615</value>
+      </restriction>
+    </attribute>
+    <attribute name="port" xmlTag="port" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_queue_properties" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#queue&gt;" xmlTag="properties" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_queue" keys="">
+    <attribute name="minRate" xmlTag="min-rate" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 1000</value>
+      </restriction>
+    </attribute>
+    <attribute name="maxRate" xmlTag="max-rate" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 1000</value>
+      </restriction>
+    </attribute>
+    <attribute name="experimenter" xmlTag="experimenter" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;" xmlTag="owned-certificate" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources" keys="resourceId">
+    <attribute name="resourceId" xmlTag="resource-id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="certificate" xmlTag="certificate" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#owned-certificate&gt;" xmlTag="private-key" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate" keys="">
+    <attribute name="keyType" xmlTag="key-type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey_keyType" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#owned-certificate&gt;&lt;urn:onf:of11:config:yang#private-key&gt;" xmlTag="key-type" xmlNamespace="urn:onf:of11:config:yang" type="Choice" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey" keys="">
+    <attribute name="dsa" xmlTag="dsa" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="rsa" xmlTag="rsa" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey_keyType_dsa" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#owned-certificate&gt;&lt;urn:onf:of11:config:yang#private-key&gt;&lt;urn:onf:of11:config:yang#key-type&gt;" xmlTag="dsa" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey_keyType" keys="">
+    <attribute name="DSAKeyValue" xmlTag="DSAKeyValue" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey_keyType_dsa_DSAKeyValue" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#owned-certificate&gt;&lt;urn:onf:of11:config:yang#private-key&gt;&lt;urn:onf:of11:config:yang#key-type&gt;&lt;urn:onf:of11:config:yang#dsa&gt;" xmlTag="DSAKeyValue" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey_keyType_dsa" keys="">
+    <attribute name="p" xmlTag="P" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="q" xmlTag="Q" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="j" xmlTag="J" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="g" xmlTag="G" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="y" xmlTag="Y" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="seed" xmlTag="Seed" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="pgenCounter" xmlTag="PgenCounter" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey_keyType_rsa" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#owned-certificate&gt;&lt;urn:onf:of11:config:yang#private-key&gt;&lt;urn:onf:of11:config:yang#key-type&gt;" xmlTag="rsa" xmlNamespace="urn:onf:of11:config:yang" type="Case" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey_keyType" keys="">
+    <attribute name="RSAKeyValue" xmlTag="RSAKeyValue" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" type="class" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey_keyType_rsa_RSAKeyValue" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#owned-certificate&gt;&lt;urn:onf:of11:config:yang#private-key&gt;&lt;urn:onf:of11:config:yang#key-type&gt;&lt;urn:onf:of11:config:yang#rsa&gt;" xmlTag="RSAKeyValue" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_ownedCertificate_privateKey_keyType_rsa" keys="">
+    <attribute name="modulus" xmlTag="Modulus" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="exponent" xmlTag="Exponent" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_externalCertificate" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;" xmlTag="external-certificate" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources" keys="resourceId">
+    <attribute name="resourceId" xmlTag="resource-id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="certificate" xmlTag="certificate" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;" xmlTag="flow-table" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources" keys="resourceId">
+    <attribute name="resourceId" xmlTag="resource-id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="maxEntries" xmlTag="max-entries" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 255</value>
+      </restriction>
+    </attribute>
+    <attribute name="metadataMatch" xmlTag="metadata-match" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="metadataWrite" xmlTag="metadata-write" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable_nextTables" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#flow-table&gt;" xmlTag="next-tables" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable" keys="">
+    <attribute name="tableId" xmlTag="table-id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable_instructions" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#flow-table&gt;" xmlTag="instructions" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable_matches" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#flow-table&gt;" xmlTag="matches" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable_writeActions" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#flow-table&gt;" xmlTag="write-actions" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable_applyActions" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#flow-table&gt;" xmlTag="apply-actions" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable_writeSetfields" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#flow-table&gt;" xmlTag="write-setfields" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable_applySetfields" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#flow-table&gt;" xmlTag="apply-setfields" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable_wildcards" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#resources&gt;&lt;urn:onf:of11:config:yang#flow-table&gt;" xmlTag="wildcards" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_resources_flowTable" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;" xmlTag="logical-switches" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch" keys="" />
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;" xmlTag="switch" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches" keys="id">
+    <attribute name="id" xmlTag="id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="datapathId" xmlTag="datapath-id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false">
+      <restriction type="Pattern">
+        <value>[0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7}</value>
+      </restriction>
+    </attribute>
+    <attribute name="enabled" xmlTag="enabled" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;" xmlTag="capabilities" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch" keys="">
+    <attribute name="maxBufferedPackets" xmlTag="max-buffered-packets" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 4294967295</value>
+      </restriction>
+    </attribute>
+    <attribute name="maxTables" xmlTag="max-tables" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 255</value>
+      </restriction>
+    </attribute>
+    <attribute name="maxPorts" xmlTag="max-ports" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 4294967295</value>
+      </restriction>
+    </attribute>
+    <attribute name="flowStatistics" xmlTag="flow-statistics" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="tableStatistics" xmlTag="table-statistics" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="portStatistics" xmlTag="port-statistics" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="groupStatistics" xmlTag="group-statistics" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="queueStatistics" xmlTag="queue-statistics" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="reassembleIpFragments" xmlTag="reassemble-ip-fragments" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="blockLoopingPorts" xmlTag="block-looping-ports" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities_reservedPortTypes" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;&lt;urn:onf:of11:config:yang#capabilities&gt;" xmlTag="reserved-port-types" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities_groupTypes" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;&lt;urn:onf:of11:config:yang#capabilities&gt;" xmlTag="group-types" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities_groupCapabilities" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;&lt;urn:onf:of11:config:yang#capabilities&gt;" xmlTag="group-capabilities" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities" keys="">
+    <attribute name="capability" xmlTag="capability" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities_actionTypes" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;&lt;urn:onf:of11:config:yang#capabilities&gt;" xmlTag="action-types" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities_instructionTypes" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;&lt;urn:onf:of11:config:yang#capabilities&gt;" xmlTag="instruction-types" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_capabilities" keys="">
+    <attribute name="type" xmlTag="type" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_controllers" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;" xmlTag="controllers" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch" keys="" />
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_controllers_controller" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;&lt;urn:onf:of11:config:yang#controllers&gt;" xmlTag="controller" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_controllers" keys="id">
+    <attribute name="id" xmlTag="id" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="false" />
+    <attribute name="role" xmlTag="role" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="ipAddress" xmlTag="ip-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="true" many="false" synthetic="true" type="class" />
+    <attribute name="port" xmlTag="port" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 65535</value>
+      </restriction>
+    </attribute>
+    <attribute name="localIpAddress" xmlTag="local-ip-address" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="true" type="class" />
+    <attribute name="localPort" xmlTag="local-port" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false">
+      <restriction type="Range">
+        <value>0 65535</value>
+      </restriction>
+    </attribute>
+    <attribute name="protocol" xmlTag="protocol" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_controllers_controller_ipAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;&lt;urn:onf:of11:config:yang#controllers&gt;&lt;urn:onf:of11:config:yang#controller&gt;" xmlTag="ip-address" xmlNamespace="urn:onf:of11:config:yang" type="Union" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_controllers_controller" keys="">
+    <attribute name="ipv4Address" readOnly="false" mandatory="false" many="false" synthetic="true">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+    <attribute name="ipv6Address" readOnly="false" mandatory="false" many="false" synthetic="true">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_controllers_controller_localIpAddress" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;&lt;urn:onf:of11:config:yang#controllers&gt;&lt;urn:onf:of11:config:yang#controller&gt;" xmlTag="local-ip-address" xmlNamespace="urn:onf:of11:config:yang" type="Union" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_controllers_controller" keys="">
+    <attribute name="ipv4Address" readOnly="false" mandatory="false" many="false" synthetic="true">
+      <restriction type="Pattern">
+        <value>(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+    </attribute>
+    <attribute name="ipv6Address" readOnly="false" mandatory="false" many="false" synthetic="true">
+      <restriction type="Pattern">
+        <value>((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\p{N}\p{L}]+)?</value>
+      </restriction>
+      <restriction type="Pattern">
+        <value>(([^:]+:){6}(([^:]+:[^:]+)|(.*\..*)))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?)(%.+)?</value>
+      </restriction>
+    </attribute>
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_controllers_controller_state" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;&lt;urn:onf:of11:config:yang#controllers&gt;&lt;urn:onf:of11:config:yang#controller&gt;" xmlTag="state" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_controllers_controller" keys="">
+    <attribute name="connectionState" xmlTag="connection-state" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="currentVersion" xmlTag="current-version" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="supportedVersions" xmlTag="supported-versions" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+  <class name="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch_resources" xmlPath="&lt;urn:onf:of11:config:yang#capable-switch&gt;&lt;urn:onf:of11:config:yang#logical-switches&gt;&lt;urn:onf:of11:config:yang#switch&gt;" xmlTag="resources" xmlNamespace="urn:onf:of11:config:yang" type="Normal" parentClass="com.centeredlogic.sampleproduct.openflowdevice.config.CapableSwitch_logicalSwitches_switch" keys="">
+    <attribute name="certificate" xmlTag="certificate" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="false" synthetic="false" />
+    <attribute name="port" xmlTag="port" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+    <attribute name="queue" xmlTag="queue" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+    <attribute name="flowTable" xmlTag="flow-table" xmlNamespace="urn:onf:of11:config:yang" readOnly="false" mandatory="false" many="true" synthetic="false" />
+  </class>
+</netconfDataModel>

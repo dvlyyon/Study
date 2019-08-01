@@ -1,0 +1,20 @@
+Version 2.1
+===========
+- fixed bug that prevented notification channel from connecting.
+
+Version 2.0
+===========
+- Added support for Unions and choices (these are represented as embedded objects in Java)
+- Added support for defining restrictions to an attribute in the mapping metadata. This is required
+  for marshalling union attributes.
+- Change to application-driven transaction handling (as opposed to doing this in an atomic thread)
+- Support for the newer RFC 6241
+- Handle varying device capabilities more gracefully
+- Simplify asynhronous notification handling
+- Handle multiple nodes as notification payload
+- Improve performace in data reception over the wire (thanks to Jimmy Armand)
+- Allow for SSH subsystem other than "netconf" to deal with non-standard devices
+
+Version 1.0
+===========
+- Initial release supporting RFC 4741 and RFC 5277

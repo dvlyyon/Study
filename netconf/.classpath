@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="libs/commons-pool.jar"/>
+	<classpathentry kind="lib" path="libs/ganymed-ssh2-build210.jar" sourcepath="C:/Data/djyang/.m2/repository/ch/ethz/ganymed/ganymed-ssh2/build210/ganymed-ssh2-build210-sources.jar"/>
+	<classpathentry kind="lib" path="libs/junit-4.4.jar"/>
+	<classpathentry kind="lib" path="libs/uuid-3.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="libs/centeredlogic-commons-1.2.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging.jar"/>
+	<classpathentry kind="lib" path="libs/jdom.jar" sourcepath="C:/Data/djyang/.m2/repository/org/jopendocument/jdom/1.1.1/jdom-1.1.1-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
