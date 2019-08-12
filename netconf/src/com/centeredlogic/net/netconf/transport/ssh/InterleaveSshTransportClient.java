@@ -380,7 +380,7 @@ public class InterleaveSshTransportClient implements TransportClientIf, HelloRes
 	static class Sender implements ResponseCallbackIf
 	{
 		/** Time to wait for a NETCONF response from the device before giving up  - defaults to 5 seconds */
-		private static final int NETCONF_RESPONSE_TIMEOUT = 5 * 1000;
+		private static final int NETCONF_RESPONSE_TIMEOUT = 2 * 60 * 1000;
 
 		/** The NETCONF RPC response from the device */
 		private Element m_response = null;
@@ -404,11 +404,20 @@ public class InterleaveSshTransportClient implements TransportClientIf, HelloRes
 				{
 					timeout = timeoutInSeconds * 1000;
 				}
-				synchronized (this)
-				{
-					if (m_response == null)
+				boolean wait = true;
+				while (wait) {
+					synchronized (this)
 					{
-						this.wait(timeout);
+						if (m_response == null)
+						{
+							this.wait(timeout);
+						}
+					}
+					if (m_response != null) break;
+					long lastUpdate = connection.getLastUpdate();
+					long currentTime = System.currentTimeMillis();
+					if ((currentTime-lastUpdate) >= timeout) {
+						wait = false;
 					}
 				}
 				if (m_response == null)

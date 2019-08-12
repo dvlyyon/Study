@@ -131,6 +131,8 @@ abstract class SshConnection extends com.centeredlogic.net.ssh.SshConnection
    protected String passPhrase;
    protected int socketTimeout;
    protected int port;
+   protected long lastUpdate=0;
+   
    
    SshConnection(Properties connectionProperties, final HelloResponseProcessorIf hrp, boolean connectNow) throws RuntimeException
    {
@@ -555,6 +557,7 @@ abstract class SshConnection extends com.centeredlogic.net.ssh.SshConnection
 	   try {
 	      byte[] buf = new byte[1024];
 	      long count = getCount(m_inputStream, logStr);
+	      lastUpdate = System.currentTimeMillis();
 	      long toRead = count;
 	      while (toRead > 0) {
 	    	  int num = 0;
@@ -562,12 +565,14 @@ abstract class SshConnection extends com.centeredlogic.net.ssh.SshConnection
 	    		  num = m_inputStream.read(buf,0,1024);
 	    	  else 
 	    		  num = m_inputStream.read(buf,0,(int)toRead);
+	    	  lastUpdate = System.currentTimeMillis();
 	    	  String appendStr = new String(buf, 0, num);
 	    	  respStr.append(appendStr);
 	    	  logStr.append(appendStr);
 	    	  toRead -= num;
 	      }
 	      count = getCount(m_inputStream, logStr);
+	      lastUpdate = System.currentTimeMillis();
 	   } catch (Exception ex) {
 		   if (this.s_logger.isDebugEnabled()) {
 			   s_logger.debug("response:" + logStr.toString());
@@ -603,6 +608,9 @@ abstract class SshConnection extends com.centeredlogic.net.ssh.SshConnection
 //      }
    }
 
+   protected long getLastUpdate() {
+	   return lastUpdate;
+   }
    /**
     * Given an input stream (in the chunked framing format), extracts the chunk size.
     *
