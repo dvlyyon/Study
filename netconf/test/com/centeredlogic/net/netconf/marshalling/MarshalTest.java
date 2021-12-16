@@ -28,11 +28,13 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
+import org.dvlyyon.net.netconf.common.Path;
+import org.dvlyyon.net.netconf.marshalling.DataModel;
+import org.dvlyyon.net.netconf.marshalling.NetconfUtil;
+import org.dvlyyon.net.netconf.marshalling.NetconfUtil.EditOperation;
 import org.jdom.Element;
 import org.jdom.Namespace;
 
-import com.centeredlogic.net.netconf.marshalling.NetconfUtil.EditOperation;
-import com.centeredlogic.net.netconf.common.Path;
 import com.centeredlogic.util.CommandLine;
 import com.centeredlogic.util.XmlUtils;
 

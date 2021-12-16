@@ -29,10 +29,12 @@ import java.util.Properties;
 import java.sql.Timestamp;
 
 import junit.framework.TestCase;
+
+import org.dvlyyon.net.netconf.Capabilities;
+import org.dvlyyon.net.netconf.NotificationListenerIf;
+import org.dvlyyon.net.netconf.transport.ssh.SshTransportClient;
 import org.jdom.Element;
 
-import com.centeredlogic.net.netconf.Capabilities;
-import com.centeredlogic.net.netconf.NotificationListenerIf;
 import com.centeredlogic.util.CLRunnable;
 import com.centeredlogic.util.CLThread;
 import com.centeredlogic.util.CommandLine;

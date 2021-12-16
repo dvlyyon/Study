@@ -28,6 +28,9 @@ import java.util.List;
 import java.util.Properties;
 
 import junit.framework.TestCase;
+
+import org.dvlyyon.net.netconf.Client;
+import org.dvlyyon.net.netconf.NetconfLocalTransactionContext;
 import org.jdom.Element;
 import org.jdom.Namespace;
 

@@ -29,14 +29,14 @@ import java.util.Properties;
 
 import junit.framework.TestCase;
 
+import org.dvlyyon.net.netconf.Client;
+import org.dvlyyon.net.netconf.ConfiguratorIf;
+import org.dvlyyon.net.netconf.NetconfLocalTransactionContext;
 import org.jdom.Element;
 import org.jdom.Namespace;
 
 import com.centeredlogic.io.FileUtils;
-import com.centeredlogic.net.netconf.Client;
 import com.centeredlogic.net.netconf.ClientTest;
-import com.centeredlogic.net.netconf.ConfiguratorIf;
-import com.centeredlogic.net.netconf.NetconfLocalTransactionContext;
 import com.centeredlogic.transaction.LocalTransactionContextIf;
 import com.centeredlogic.transaction.TransactionManager;
 import com.centeredlogic.transaction.TransactionalResourceIf;

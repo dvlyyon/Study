@@ -28,6 +28,7 @@ import java.util.Properties;
 
 import junit.framework.TestCase;
 
+import org.dvlyyon.net.netconf.transport.ssh.SyncSshConnection;
 import org.jdom.Element;
 import org.jdom.Namespace;
 
