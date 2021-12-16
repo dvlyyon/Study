@@ -917,4 +917,21 @@ public class Client implements TransactionalResourceIf, ConfiguratorIf, HelloRes
       return ret;
    }
 
+   public static void main(String [] args) {
+	   Properties properties = new Properties();
+       properties.put("protocol", "ssh");
+       properties.put("host", "172.29.202.84");
+       properties.put("port", "830");
+       properties.put("username", "axr");
+       properties.put("password", "e33333");
+	   Client client = new Client();
+	   try {
+		   client.setup(properties);
+		   String sessionID = client.getSessionID();
+		   System.out.print("SessionID is "+sessionID);
+	   } catch (RuntimeException e) {
+		   e.printStackTrace();
+	   }
+   }
+
 }
